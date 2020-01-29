@@ -40,11 +40,32 @@ Permissao VARCHAR(200) NOT NULL
 
 
 INSERT INTO Estilos (Nome)
-
-VALUES('pagode'),('Samba'),('Rock');
+VALUES('pagode'),('Samba'),('Rock'),
+('rock'),('amba'),('IWDJ');
 
 INSERT INTO Artistas (Nome)
-VALUES('ZECA PAGODINHO'),('ANA'),('JOAO NOGUEIRA');
+VALUES('ZECA PAGODINHO'),('ANA'),('JOAO NOGUEIRA'), ('Alberto rosa'),('Josiel nogueira');
 
-INSERT INTO Albuns (Nome, DataLancamento, Localizacao, QtdMinutos, IdArtista, IdEstilo)
-VALUES('Equalize','25/08/2001','ACRE',120, 3,3);
+INSERT INTO Album(Nome, DataLancamento, Localizacao, QtdMinutos, IdArtista, IdEstilo)
+VALUES('Equalize','25/08/2001','ACRE',120, 3,3),
+('album2','25/01/1970','Rio Branco', 350,2,2),
+('album2','25/01/1970','Rio Branco', 350,1,1),
+('album2','25/01/1970','Rio Branco', 350,4,4),
+
+
+
+
+--update para alterar dados
+
+UPDATE Artistas
+SET Nome = 'joao'
+WHERE IdArtista = 2;
+
+
+-- DELETE 
+
+DELETE FROM Artistas
+WHERE IdArtista = 5;
+
+
+-- truncate table tabela apaga todos os valores presentes numa tabela
