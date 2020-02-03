@@ -51,6 +51,9 @@ SELECT Pessoas.Nome_Pessoa, Emails.Nome_Email FROM Pessoas
 INNER JOIN Emails ON Emails.Id_Email = Pessoas.Id_Email;
 
 
-SELECT Pessoas.Nome_Pessoa, Emails.Nome_Email, CNH.Habilitacao FROM Pessoas
+SELECT Pessoas.Nome_Pessoa, Emails.Nome_Email, Telefones.Numero_Telefone, CNH.Habilitacao FROM Pessoas
 INNER JOIN CNH ON CNH.Id_CNH = Pessoas.Id_CNH
-INNER JOIN Emails ON Emails.Id_Email = Pessoas.Id_Email;
+INNER JOIN Emails ON Emails.Id_Email = Pessoas.Id_Email
+INNER JOIN Telefones ON Telefones.Id_Telefone = Pessoas.Id_Telefone;
+
+

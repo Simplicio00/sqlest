@@ -133,3 +133,46 @@ WHERE DataLancamento LIKE '%1970-01-25%';
 SELECT Nome, Datalancamento, IdArtista from Album
 order by DataLancamento ASC; 
 
+
+
+
+--exemplo
+USE Optus_Tarde;
+--selecionar os albuns do mesmo artista
+select Artistas.Nome, Album.Nome FROM Album
+INNER JOIN Artistas on Artistas.IdArtista = Album.IdArtista
+WHERE Artistas.Nome like '%ZECA PAGODINHO%';
+-- WHERE Artistas.IdArtista = 1;
+
+GO
+
+-- selecionar os albuns lançados na mesma data
+SELECT * FROM Album WHERE DataLancamento 
+LIKE '%1970%';
+--com inner join
+select * from Artistas
+inner join Album ON Artistas.IdArtista = Album.IdArtista
+WHERE DataLancamento LIKE '%1970%';
+ 
+-- selecionar albuns e artistas e ordenar por data de lançamento
+--Do mais antigo para o mais recente
+
+SELECT DataLancamento, Nome FROM Album order by DataLancamento ASC;
+
+--c join
+select Artistas.Nome as NomeArtista, 
+Album.Nome as NomeAlbum, DataLancamento as Lancamento FROM Artistas
+inner join Album on Album.IdArtista =Artistas.IdArtista
+ORDER BY Lancamento asc;
+
+
+
+-- selecionar artistas do mesmo estilo musical
+
+select Artistas.Nome, Estilos.Nome, Album.Nome from Album
+JOIN Estilos on Estilos.IdEstilo = Album.IdEstilo
+INNER JOIN Artistas on Artistas.IdArtista = Artistas.IdArtista
+WHERE Estilos.Nome like '%pagode%';
+
+SELECT Estilos.Nome, Album.Nome from Album
+JOIN Estilos on Estilos.IdEstilo = Album.IdEstilo;
