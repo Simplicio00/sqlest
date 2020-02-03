@@ -33,16 +33,16 @@ Id_CNH int foreign key references CNH(Id_CNH)
 
 
 INSERT INTO Telefones(Numero_Telefone)
-VALUES(9090-8716),(9090-8677);
+VALUES(9096-8777);
 
 INSERT INTO Emails(Nome_Email)
-VALUES('carlinhos@sd.com'),('GabiSousa@dalls.com');
+VALUES('carbitter@sd.com');
 
 INSERT INTO CNH(Habilitacao)
-VALUES(1),(0);
+VALUES(1);
 
 INSERT INTO Pessoas(Nome_Pessoa, Id_Telefone, Id_Email, Id_CNH)
-VALUES('Carlos Augusto Ferreira',1,1,1),('Gabriela Brás de Sousa',2,2,2);
+VALUES('Carlos Andrada Bittencourt',3,4,3);
 
 SELECT Pessoas.Nome_Pessoa, Telefones.Numero_Telefone FROM Pessoas 
 INNER JOIN Telefones ON Telefones.Id_Telefone = Pessoas.Id_Telefone; 
@@ -57,3 +57,4 @@ INNER JOIN Emails ON Emails.Id_Email = Pessoas.Id_Email
 INNER JOIN Telefones ON Telefones.Id_Telefone = Pessoas.Id_Telefone;
 
 
+SELECT * FROM Emails;
