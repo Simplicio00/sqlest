@@ -21,3 +21,12 @@ inner join Evento on Evento.IdEvento = Presenca.IdEvento
 where
 NomeUsuario like '%Hugo%';
 
+
+select usuario.NomeUsuario, TipoUsuario.TituloTipoUsuario from Usuario
+inner join TipoUsuario on TipoUsuario.IdTipoUsuario = Usuario.IdTipoUsuario;
+
+select Evento.NomeEvento, TipoEvento.TituloTipoEvento, Instituicao.NomeFantasia from Evento
+inner join TipoEvento on TipoEvento.IdTipoEvento = Evento.IdTipoEvento
+inner join Instituicao on Instituicao.IdInstituicao = Evento.IdInstituicao;
+
+
